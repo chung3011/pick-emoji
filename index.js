@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const emoji = require('emoji.json');
 
 async function displayEmoji() {
