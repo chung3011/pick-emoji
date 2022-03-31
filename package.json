@@ -1,6 +1,6 @@
 {
   "name": "pick-emoji",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "bin": "./index.js",
   "dependencies": {
     "emoji.json": "^13.1.0",

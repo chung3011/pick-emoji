@@ -1,24 +1,19 @@
 #!/usr/bin/env node
 
 const emoji = require('emoji.json');
+const { AutoComplete } = require('enquirer');
 
-async function displayEmoji() {
-  const { AutoComplete } = require('enquirer');
-
+function displayEmoji() {
   const prompt = new AutoComplete({
     name: 'emoji',
     message: 'Pick emoji',
     limit: 5,
-    choices: emoji.map((e) => ({ name: e.name, value: e.char })),
+    choices: emoji.map(({ name, char }) => ({ name: name, value: char })),
   });
 
-  await prompt
+  prompt
     .run()
-    .then((answer) => {
-      for (const e of emoji) {
-        e.name == answer && console.log(e.char);
-      }
-    })
+    .then((answer) => emoji.find((e) => e.name === answer))
     .catch(console.error);
 }
 displayEmoji();
