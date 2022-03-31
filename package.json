@@ -9,6 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "pick-emoji": "node ./node_modules/pick-emoji/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chung3011/pick-emoji.git"
